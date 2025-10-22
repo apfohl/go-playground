@@ -17,6 +17,10 @@ func main() {
 	}
 
 	rootCmd.AddCommand(modules.NewSequencesCmd())
+	rootCmd.AddCommand(modules.NewJpgCmd())
+	rootCmd.AddCommand(modules.NewPdfCmd())
+	rootCmd.AddCommand(modules.NewServerCmd())
+	rootCmd.AddCommand(modules.NewDatabaseCmd())
 
 	if err := fang.Execute(context.Background(), rootCmd); err != nil {
 		os.Exit(1)

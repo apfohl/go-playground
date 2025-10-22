@@ -19,13 +19,11 @@ func numbers() collections.Enumerable[int] {
 }
 
 func NewSequencesCmd() *cobra.Command {
-	cmd := &cobra.Command{
+	return &cobra.Command{
 		Use:   "sequences",
 		Short: "Run sequences demonstration",
 		Run:   runSequences,
 	}
-
-	return cmd
 }
 
 func runSequences(_ *cobra.Command, _ []string) {
