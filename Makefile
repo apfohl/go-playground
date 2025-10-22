@@ -3,14 +3,14 @@
 BINARY_NAME=playground
 
 build:
-	go build -o bin/$(BINARY_NAME) main.go
+	go build -o $(BINARY_NAME) main.go
 
 run:
 	go run main.go
 
 clean:
 	go clean
-	rm -rf bin/
+	rm -f $(BINARY_NAME)
 
 test:
 	go test -v ./...
@@ -26,7 +26,7 @@ deps:
 	go mod tidy
 
 build-run: build
-	./bin/$(BINARY_NAME)
+	./$(BINARY_NAME)
 
 help:
 	@echo "Available targets:"
